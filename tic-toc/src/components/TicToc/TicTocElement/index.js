@@ -9,7 +9,7 @@ class TicTocElement extends Component {
     boxClicked=(e)=>{
         debugger;
         if(e.target.classList.length == 2 && !this.props.isGameOver)
-        { 
+        {
             if(this.props.ev()){
                 e.target.classList.add("green");
             }else{

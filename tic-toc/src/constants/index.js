@@ -1,4 +1,4 @@
-var navLInks = ["Tictoc"];
+var navLInks = ["Tictoc","weee"];
  export var TrueCase = [
     [0,1,2],
     [0,3,6],

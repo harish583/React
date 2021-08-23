@@ -55,7 +55,7 @@ class TicToc extends Component {
                 <TicTocRow row={1} eve={this.setColor} isCompleted={this.checkCompleted} isGameOver={this.state.isGameCompleted}/>
                 <TicTocRow row={2} eve={this.setColor} isCompleted={this.checkCompleted} isGameOver={this.state.isGameCompleted}/>
                 <TicTocRow row={3} eve={this.setColor} isCompleted={this.checkCompleted} isGameOver={this.state.isGameCompleted}/>
-                {this.state.isGameCompleted && this.state.isGreenwin ? <div class='green win'>Green Win</div> : this.state.isGameCompleted && !this.state.isGreenwin ? <div calss='red win'>Red Win</div> : ""}
+                {this.state.isGameCompleted && this.state.isGreenwin ? <div class='green win'>Green Win</div> : this.state.isGameCompleted && !this.state.isGreenwin ? <div class='red win'>Red Win</div> : ""}
             </>
         )
     }

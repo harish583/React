@@ -71,14 +71,27 @@ class App extends react.Component {
     ],
   };
   disable = (id) => {
-    debugger;
-    let filteredStudents = this.state.students.filter((student) => {
-      return student.id != id;
+    let modifiedStudents = this.state.students.map((student) => {
+      if (student.id == id) {
+        student.isEnable = false;
+      }
+      return student;
     });
     this.setState({
-      students: filteredStudents,
+      students: [...modifiedStudents],
     });
   };
+  enable =(id)=>{
+    let modifiedStudents = this.state.students.map((student) => {
+      if (student.id == id) {
+        student.isEnable = true;
+      }
+      return student;
+    });
+    this.setState({
+      students: [...modifiedStudents],
+    });
+  }
   render() {
     return (
       <div className="App">
@@ -89,21 +102,16 @@ class App extends react.Component {
           <div>Email</div>
           <div></div>
         </div>
-        {this.state.students.filter((student) => student.isEnable).length ? (
-          this.state.students
-            .filter((student) => student.isEnable)
-            .map((student, i) => {
-              return (
-                <Student
-                  student={student}
-                  key={student.id}
-                  disable={this.disable}
-                />
-              );
-            })
-        ) : (
-          <div className="text-center">Empty</div>
-        )}
+        {this.state.students.map((student, i) => {
+          return (
+            <Student
+              student={student}
+              key={student.id}
+              disable={this.disable}
+              enable = {this.enable}
+            />
+          );
+        })}
       </div>
     );
   }
